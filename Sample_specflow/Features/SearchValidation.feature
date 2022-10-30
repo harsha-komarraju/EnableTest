@@ -1,0 +1,11 @@
+﻿Feature: Validating search results
+	Search with a keyword and validate if that appeard in the results 
+
+	Background: 
+	Given enable website is launched
+
+@regression
+Scenario: open search and search wickes
+	Given search is selected
+	When wickes keyword entered
+	Then search word is displayed in results 

@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.UI;
 using Sample_specflow.Hooks;
 using System;
+using NUnit.Framework;
 using System.Collections.Generic;
 using System.Text;
 using TechTalk.SpecFlow;
@@ -44,6 +45,7 @@ namespace Sample_specflow.Steps
         {
             WebDriverWait wait = new WebDriverWait(this.global.Driver, TimeSpan.FromSeconds(10));
             IWebElement homePage = wait.Until(e => e.FindElement(By.XPath("//div[@id='inventory_container']")));
+            Assert.IsTrue(homePage.Displayed);
             Console.WriteLine(homePage.Text);
         }
 
@@ -80,6 +82,7 @@ namespace Sample_specflow.Steps
         {
             WebDriverWait wait = new WebDriverWait(this.global.Driver, TimeSpan.FromSeconds(10));
             IWebElement orderPlaced = wait.Until(e => e.FindElement(By.XPath("//div[@id='checkout_complete_container']")));
+            Assert.IsTrue(orderPlaced.Displayed);
             Console.WriteLine(orderPlaced.Text);
             this.global.Driver.FindElement(By.XPath("//button[@name='back-to-products']")).Click();
         }
