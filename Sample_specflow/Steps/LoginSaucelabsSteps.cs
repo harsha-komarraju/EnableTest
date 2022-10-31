@@ -58,10 +58,12 @@ namespace Sample_specflow.Steps
 
         }
 
+
+
         [When(@"first item added to basket")]
         public void WhenFirstItemAddedToBasket()
         {
-            this.global.Driver.FindElement(By.XPath("//button[@id='add-to-cart-sauce-labs-onesie']")).Click();
+            this.global.Driver.FindElement(By.XPath("//button[@id='add-to-cart-sauce-labs-onesie']")).Click();           
         }
 
 

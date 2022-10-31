@@ -56,5 +56,28 @@ namespace Sample_specflow.Steps
             
         }
 
+
+        [When(@"enable word is entered")]
+        public void WhenEnableWordIsEntered()
+        {
+            this.global.Driver.FindElement(By.XPath("//input[@id = 'nav-search']")).SendKeys("enable");
+            this.global.Driver.FindElement(By.XPath("//input[@id = 'nav-search']")).Submit();
+
+        }
+
+        [Then(@"check if test fails when checked with wrong text")]
+        public void ThenCheckIfTestFailsWhenCheckedWithWrongText()
+        {
+            var search = this.global.Driver.PageSource.Contains("/customer-stories/retailer-wickes-onboard-enable-in-a-highly-accelerated-timeframe");
+            try
+            {
+                Assert.IsTrue(search);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Search results not found - Fail");
+            }
+        }
+
     }
 }

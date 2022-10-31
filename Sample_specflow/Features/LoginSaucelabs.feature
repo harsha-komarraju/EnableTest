@@ -14,6 +14,7 @@ Scenario: Adding item to basket and make a payment
 	And open basket and finish payment
 	Then order complete is seen 
 
+
 Scenario: To check error message in your information screen
 	Given home page is displayed
 	When first item added to basket
